@@ -99,6 +99,8 @@ const styles = StyleSheet.create({
     padding: 10,
     width: "80%",
     fontStyle: "italic",
+    paddingLeft: 20,
+    color: "a9a9a9",
   },
   button: {
     backgroundColor: "gray",

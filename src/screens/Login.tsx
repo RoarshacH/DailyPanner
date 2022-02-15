@@ -14,8 +14,13 @@ const Login = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.top}>
-        <View style={styles.box1_1}></View>
-        <View style={styles.box1_2}>
+        <View style={styles.logo}>
+          <Image
+            style={styles.logoImage}
+            source={require("./../../assets/images/logoExample.png")}
+          ></Image>
+        </View>
+        <View style={styles.headerTextView}>
           <Text style={styles.headerTextStyle}>Welcome</Text>
         </View>
       </View>
@@ -90,34 +95,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: "10%",
   },
-  box1_1: {
-    backgroundColor: "blue",
-    marginTop: 5,
-    height: 80,
-    width: 80,
+  logo: {
+    marginTop: 25,
+    height: 150,
+    width: 150,
     alignSelf: "center",
     position: "relative",
     bottom: 50,
+    borderRadius: 50,
   },
-  box1_2: {
-    backgroundColor: "teal",
+  logoImage: {
+    height: 150,
+    width: 150,
+    alignSelf: "center",
+    position: "relative",
+    borderRadius: 50,
+  },
+  headerTextView: {
     marginTop: 5,
     flex: 0.5,
     justifyContent: "center",
     alignItems: "center",
   },
   headerTextStyle: {
-    fontSize: 24,
-    ...Platform.select({
-      ios: {
-        color: "gray",
-        fontWeight: "400",
-      },
-      android: {
-        color: "white",
-        fontWeight: "700",
-      },
-    }),
+    fontSize: 36,
+    color: "gray",
+    fontWeight: "400",
   },
   input: {
     height: 50,
@@ -127,9 +130,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: "80%",
+    fontStyle: "italic",
+    fontSize: 16,
+    paddingLeft: 20,
+    color: "a9a9a9",
   },
   button: {
-    backgroundColor: "gray",
+    backgroundColor: "#eee",
     height: 50,
     width: 150,
     borderRadius: 10,
