@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import LoginScreen from "./src/components/Login";
+import SignUpScreen from "./src/components/SignUP";
+import HomeScreen from "./src/components/Home";
+import Header from "./src/components/Header";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* //Uncomment the Screen that needs viewing */}
+      {/* <Header></Header> */}
+      <LoginScreen></LoginScreen>
     </View>
   );
 }
@@ -13,8 +19,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
 });
