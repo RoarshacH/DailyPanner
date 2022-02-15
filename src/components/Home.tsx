@@ -9,35 +9,38 @@ import {
   Image,
 } from "react-native";
 import Header from "./Header";
+import ListItem from "./ListItem";
 
 const ListViewTest = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <Header></Header>
-      <View style={styles.bodyTop}></View>
+      <View style={styles.bodyTop}>
+        <ListItem></ListItem>
+        <ListItem></ListItem>
+      </View>
       <View style={styles.bodyBottom}>
         <TouchableOpacity style={styles.button}>
-          <Text> Opacity Btn </Text>
+          <Text> Tasks For Today </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Text> Opacity Btn </Text>
+          <Text> Calander View </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Text> Opacity Btn </Text>
+          <Text> List All Tasks </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Text> Opacity Btn </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button}>
-          <Text> Opacity Btn </Text>
+          <Text> Logout </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.roundButton}>
-          <Text> </Text>
+          <Image
+            style={styles.imagebutton}
+            source={require("./../../assets/images/addItem (2).png")}
+          ></Image>
         </TouchableOpacity>
       </View>
       <View style={styles.footer}></View>
@@ -85,11 +88,16 @@ const styles = StyleSheet.create({
     position: "relative",
     top: 0,
   },
+  imagebutton: {
+    borderRadius: 50,
+    height: 40,
+    width: 40,
+  },
   roundButton: {
     borderRadius: 50,
-    height: 50,
-    width: 50,
-    backgroundColor: "orange",
+    height: 40,
+    width: 40,
+    // backgroundColor: "orange",
     position: "relative",
     bottom: -20,
     right: -150,

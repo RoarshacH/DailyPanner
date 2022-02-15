@@ -1,27 +1,25 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, SafeAreaView, Platform } from "react-native";
 
-const Header = () => {
+const ListItem = () => {
   return (
     <View style={styles.wrapper}>
-      <Text style={styles.headerText}>Daily Planner</Text>
+      <Text>Upcoming Deadline</Text>
+      <Text>Time: HH:MM - DD:MM</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: "100%",
-    height: "10%",
+    width: "70%",
+    height: 80,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#eee",
-  },
-  headerText: {
-    fontSize: 24,
-    color: "black",
-    fontWeight: "500",
+    margin: 10,
+    borderRadius: 10,
   },
 });
 
-export default Header;
+export default ListItem;
