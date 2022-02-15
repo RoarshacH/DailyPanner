@@ -11,7 +11,8 @@ export default function App() {
     <View style={styles.container}>
       {/* //Uncomment the Screen that needs viewing */}
       {/* <Header></Header> */}
-      <LoginScreen></LoginScreen>
+      {/* <LoginScreen></LoginScreen> */}
+      <SignUpScreen></SignUpScreen>
     </View>
   );
 }
