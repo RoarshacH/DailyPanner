@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import LoginScreen from "./src/screens/Login";
 import SignUpScreen from "./src/screens/SignUP";
 import HomeScreen from "./src/screens/Home";
+import DashboardView from "./src/screens/Dashboard";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <LoginScreen></LoginScreen>
       {/* <SignUpScreen></SignUpScreen> */}
       {/* <HomeScreen></HomeScreen> */}
+      {/* <DashboardView></DashboardView> */}
     </View>
   );
 }
