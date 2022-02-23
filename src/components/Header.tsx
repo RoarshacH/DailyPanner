@@ -12,7 +12,7 @@ const Header = () => {
 const styles = StyleSheet.create({
   wrapper: {
     width: "100%",
-    height: "10%",
+    height: "8%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#eee",
