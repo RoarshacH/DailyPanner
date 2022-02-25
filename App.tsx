@@ -11,7 +11,7 @@ import SpaceGameLayout from "./src/screens/SpaceGameLayout";
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* //Uncomment the Screen that needs viewing and save the file  default is Login Screen*/}
+      {/* //Uncomment the Screen that needs viewing and save the file  default is the Login Screen*/}
       <LoginScreen></LoginScreen>
       {/* <SignUpScreen></SignUpScreen> */}
       {/* <HomeScreen></HomeScreen> */}
