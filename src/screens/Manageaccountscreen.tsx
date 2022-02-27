@@ -9,7 +9,7 @@ import {
   Image,
 } from "react-native";
 
-const ManageAccount= () => {
+const ManageAccount = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.top}>
@@ -18,7 +18,6 @@ const ManageAccount= () => {
             style={styles.logoImage}
             source={require("./../../assets/images/logoExample.png")}
           ></Image>
- 
         </View>
         <View style={styles.headerTextView}>
           <Text style={styles.headerTextStyle}>Account Profile Settings</Text>
@@ -97,6 +96,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerTextStyle: {
+    textAlign: "center",
     fontSize: 36,
     color: "gray",
     fontWeight: "400",
@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  
 });
 
 export default ManageAccount;

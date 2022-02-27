@@ -6,6 +6,8 @@ import SignUpScreen from "./src/screens/SignUP";
 import HomeScreen from "./src/screens/Home";
 import ScrollViewScreen from "./src/screens/Scrolling";
 import DashboardView from "./src/screens/Dashboard";
+import ManageAccount from "./src/screens/Manageaccountscreen";
+import Boxes from "./src/screens/Boxes";
 import SpaceGameLayout from "./src/screens/SpaceGameLayout";
 
 export default function App() {
@@ -13,13 +15,13 @@ export default function App() {
     <View style={styles.container}>
       {/* //Uncomment the Screen that needs viewing and save the file  default is the Login Screen*/}
       {/* Some pages are relevent to our app some are experimental layouts */}
-      <LoginScreen></LoginScreen>
+      {/* <LoginScreen></LoginScreen> */}
       {/* <SignUpScreen></SignUpScreen> */}
       {/* <HomeScreen></HomeScreen> */}
       {/* <ScrollViewScreen></ScrollViewScreen> */}
-      {/* <HomeScreen></HomeScreen> */}
       {/* <DashboardView></DashboardView> */}
-
+      {/* <Boxes></Boxes> */}
+      {/* <ManageAccount></ManageAccount> */}
       {/* <SpaceGameLayout></SpaceGameLayout> */}
     </View>
   );
