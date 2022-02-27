@@ -15,7 +15,7 @@ export default function App() {
     <View style={styles.container}>
       {/* //Uncomment the Screen that needs viewing and save the file  default is the Login Screen*/}
       {/* Some pages are relevent to our app some are experimental layouts */}
-      {/* <LoginScreen></LoginScreen> */}
+      <LoginScreen></LoginScreen>
       {/* <SignUpScreen></SignUpScreen> */}
       {/* <HomeScreen></HomeScreen> */}
       {/* <ScrollViewScreen></ScrollViewScreen> */}
