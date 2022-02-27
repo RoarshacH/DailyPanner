@@ -48,7 +48,7 @@ const ListViewTest = () => {
     <SafeAreaView style={styles.wrapper}>
       <Header></Header>
       <View style={styles.bodyTop}>
-        {toDoList.length === 0 && (
+        {/* {toDoList.length === 0 && (
           <Text style={{ color: "#A7CBD9" }}>No to do task available</Text>
         )}
         {toDoList.map((toDo: IToDo, index: number) => (
@@ -63,9 +63,9 @@ const ListViewTest = () => {
               <Text style={{ color: "crimson" }}>Erase</Text>
             </TouchableOpacity>
           </View>
-        ))}
-        {/* <ListItem></ListItem>
-        <ListItem></ListItem> */}
+        ))} */}
+        <ListItem></ListItem>
+        <ListItem></ListItem>
       </View>
       <View style={styles.bodyBottom}>
         <TouchableOpacity style={styles.button}>
@@ -84,16 +84,16 @@ const ListViewTest = () => {
           <Text> Logout </Text>
         </TouchableOpacity>
 
-        {/* <TouchableOpacity style={styles.roundButton}>
+        <TouchableOpacity style={styles.roundButton}>
           <Image
             style={styles.imagebutton}
-            source={require("./../../assets/images/addItem (2).png")}
+            source={require("./../../assets/images/fabImage.png")}
           ></Image>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       </View>
 
       <View style={styles.footer}>
-        <TextInput
+        {/* <TextInput
           placeholder="Enter your todo task..."
           value={value}
           onChangeText={(e) => {
@@ -101,18 +101,17 @@ const ListViewTest = () => {
             showError(false);
           }}
           style={styles.inputBox}
-        />
-        {/* <Button title="Add Task" onPress={handleSubmit} /> */}
-        <TouchableOpacity style={styles.roundButton} onPress={handleSubmit}>
+        /> */}
+        {/* <TouchableOpacity style={styles.roundButton} onPress={handleSubmit}>
           <Image
             style={styles.imagebutton}
             source={require("./../../assets/images/fabImage.png")}
           ></Image>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
-      {error && (
+      {/* {error && (
         <Text style={styles.error}>Error: Input field is empty...</Text>
-      )}
+      )} */}
     </SafeAreaView>
   );
 };
@@ -166,7 +165,6 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     height: 40,
     width: 40,
-    // backgroundColor: "orange",
     position: "relative",
     bottom: 10,
     right: -150,
