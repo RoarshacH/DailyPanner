@@ -4,8 +4,6 @@ import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-nativ
 const SignUP = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
-      <View style={styles.top}></View>
-
       <View style={styles.body}>
         <View style={styles.topTitle}>
           <Text style={styles.headerTextStyle}>Sign Up Here</Text>
@@ -52,7 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   body: {
-    flex: 3,
+    flex: 6,
     justifyContent: "center",
     alignItems: "center",
     paddingTop: "15%",

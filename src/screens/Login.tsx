@@ -63,12 +63,11 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   top: {
-    marginTop: "10%",
     flex: 2,
     justifyContent: "flex-end",
   },
   body: {
-    flex: 2,
+    flex: 1.5,
     justifyContent: "center",
     alignItems: "center",
     paddingTop: "15%",
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerTextStyle: {
-    fontSize: 36,
+    fontSize: 26,
     color: "gray",
     fontWeight: "400",
   },
