@@ -1,24 +1,12 @@
 import React, { Component } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-  Platform,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { Text, View, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity, Image } from "react-native";
 
 const Login = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.top}>
         <View style={styles.logo}>
-          <Image
-            style={styles.logoImage}
-            source={require("./../../assets/images/logoExample.png")}
-          ></Image>
+          <Image style={styles.logoImage} source={require("./../../assets/images/logoExample.png")}></Image>
         </View>
         <View style={styles.headerTextView}>
           <Text style={styles.headerTextStyle}>Welcome</Text>
@@ -27,11 +15,7 @@ const Login = () => {
 
       <View style={styles.body}>
         <TextInput style={styles.input} value={"Username"} />
-        <TextInput
-          style={styles.input}
-          value={"Password"}
-          placeholder="Password"
-        />
+        <TextInput style={styles.input} value={"Password"} placeholder="Password" />
         <Text style={styles.smallText}> Forgot Password</Text>
       </View>
       <View style={styles.buttonSet}>
@@ -41,22 +25,13 @@ const Login = () => {
 
         <View style={styles.signUpRow}>
           <TouchableOpacity style={styles.signUpImages}>
-            <Image
-              style={styles.signUpImages}
-              source={require("./../../assets/images/facebook.png")}
-            ></Image>
+            <Image style={styles.signUpImages} source={require("./../../assets/images/facebook.png")}></Image>
           </TouchableOpacity>
           <TouchableOpacity style={styles.signUpImages}>
-            <Image
-              style={styles.signUpImages}
-              source={require("./../../assets/images/Instagram.png")}
-            ></Image>
+            <Image style={styles.signUpImages} source={require("./../../assets/images/Instagram.png")}></Image>
           </TouchableOpacity>
           <TouchableOpacity style={styles.signUpImages}>
-            <Image
-              style={styles.signUpImages}
-              source={require("./../../assets/images/twitter.png")}
-            ></Image>
+            <Image style={styles.signUpImages} source={require("./../../assets/images/twitter.png")}></Image>
           </TouchableOpacity>
         </View>
       </View>
@@ -133,7 +108,6 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     fontSize: 16,
     paddingLeft: 20,
-    color: "a9a9a9",
   },
   button: {
     backgroundColor: "#eee",
