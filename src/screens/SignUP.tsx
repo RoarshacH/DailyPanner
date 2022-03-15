@@ -1,9 +1,9 @@
 import React from "react";
-import { Text, View, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity, Image } from "react-native";
+import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 
 const SignUP = () => {
   return (
-    <SafeAreaView style={styles.wrapper}>
+    <View style={styles.wrapper}>
       <View style={styles.top}></View>
 
       <View style={styles.body}>
@@ -27,7 +27,7 @@ const SignUP = () => {
       </View>
 
       <View style={styles.footer}></View>
-    </SafeAreaView>
+    </View>
   );
 };
 

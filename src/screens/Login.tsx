@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Text, View, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity, Image } from "react-native";
+import React from "react";
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
 
 const Login = () => {
   return (
-    <SafeAreaView style={styles.wrapper}>
+    <View style={styles.wrapper}>
       <View style={styles.top}>
         <View style={styles.logo}>
           <Image style={styles.logoImage} source={require("./../../assets/images/logoExample.png")}></Image>
@@ -39,7 +39,7 @@ const Login = () => {
       <View style={styles.footer}>
         <Text style={styles.smallText}> Not a User Sign up Here!</Text>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

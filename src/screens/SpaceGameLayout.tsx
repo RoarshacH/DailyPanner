@@ -1,9 +1,9 @@
 import React from "react";
-import { View, StyleSheet, SafeAreaView } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 const SpaceGameLayout = () => {
   return (
-    <SafeAreaView style={styles.wrapper}>
+    <View style={styles.wrapper}>
       <View style={[styles.topBox]}>
         <View style={styles.boxes}></View>
         <View style={styles.boxes}></View>
@@ -31,7 +31,7 @@ const SpaceGameLayout = () => {
       </View>
 
       <View style={[styles.bottomBox]}></View>
-    </SafeAreaView>
+    </View>
   );
 };
 
