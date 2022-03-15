@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-  Platform,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { Text, View, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity, Image } from "react-native";
 
 const SignUP = () => {
   return (
@@ -21,19 +12,9 @@ const SignUP = () => {
         </View>
         <TextInput style={styles.input} value={"Username"} />
         <TextInput style={styles.input} value={"Email"} />
-        <TextInput
-          style={styles.input}
-          value={"Password"}
-          placeholder="Password"
-        />
-        <TextInput
-          style={styles.input}
-          value={"Confirm Password"}
-          placeholder="Confirm Password"
-        />
-        <Text style={styles.smallText}>
-          By signing up You agree to the our Terms of service and privacy policy
-        </Text>
+        <TextInput style={styles.input} value={"Password"} placeholder="Password" />
+        <TextInput style={styles.input} value={"Confirm Password"} placeholder="Confirm Password" />
+        <Text style={styles.smallText}>By signing up You agree to the our Terms of service and privacy policy</Text>
       </View>
       <View style={styles.buttonSet}>
         <TouchableOpacity style={styles.button}>
@@ -100,7 +81,6 @@ const styles = StyleSheet.create({
     width: "80%",
     fontStyle: "italic",
     paddingLeft: 20,
-    color: "a9a9a9",
   },
   button: {
     backgroundColor: "gray",

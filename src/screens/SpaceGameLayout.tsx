@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { View, StyleSheet, SafeAreaView, Image } from "react-native";
+import React from "react";
+import { View, StyleSheet, SafeAreaView } from "react-native";
 
 const SpaceGameLayout = () => {
   return (
@@ -27,15 +27,10 @@ const SpaceGameLayout = () => {
       </View>
       <View style={[styles.bottomBox]}>
         <View style={styles.ball1}></View>
-        <View style={styles.longBox}> </View>
+        <View style={styles.longBox}></View>
       </View>
 
-      <View style={[styles.bottomBox]}>
-        <Image
-          source={require("../resources/fabImage.png")}
-          style={[styles.fab]}
-        ></Image>
-      </View>
+      <View style={[styles.bottomBox]}></View>
     </SafeAreaView>
   );
 };

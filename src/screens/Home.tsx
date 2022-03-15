@@ -1,14 +1,5 @@
 import React, { Component, useState } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  SafeAreaView,
-  Button,
-  TouchableOpacity,
-  Image,
-  TextInput,
-} from "react-native";
+import { Text, View, StyleSheet, SafeAreaView, Button, TouchableOpacity, Image, TextInput } from "react-native";
 import Header from "../components/Header";
 import ListItem from "../components/ListItem";
 
@@ -24,11 +15,7 @@ const ListViewTest = () => {
   const [error, showError] = useState<Boolean>(false);
 
   const handleSubmit = (): void => {
-    if (value.trim())
-      setToDos([
-        ...toDoList,
-        { text: value, completed: false, date: new Date().toLocaleString() },
-      ]);
+    if (value.trim()) setToDos([...toDoList, { text: value, completed: false, date: new Date().toLocaleString() }]);
     else showError(true);
     setValue("");
   };
@@ -85,10 +72,7 @@ const ListViewTest = () => {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.roundButton}>
-          <Image
-            style={styles.imagebutton}
-            source={require("./../../assets/images/fabImage.png")}
-          ></Image>
+          <Image style={styles.imagebutton} source={require("./../../assets/images/fabImage.png")}></Image>
         </TouchableOpacity>
       </View>
 
