@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Text, View, StyleSheet, SafeAreaView, Button, TouchableOpacity, Image, TextInput } from "react-native";
 import Header from "../components/Header";
 import ListItem from "../components/ListItem";

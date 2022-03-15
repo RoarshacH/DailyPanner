@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Text, View, StyleSheet, SafeAreaView, TextInput, Platform, TouchableOpacity, Image } from "react-native";
 
 const SignUP = () => {

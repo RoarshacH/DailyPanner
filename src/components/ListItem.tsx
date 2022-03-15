@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, SafeAreaView, Platform } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 
 const ListItem = () => {
   return (
