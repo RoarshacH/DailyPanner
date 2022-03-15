@@ -1,6 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import LoginScreen from "./src/screens/Login";
 import SignUpScreen from "./src/screens/SignUP";
 import HomeScreen from "./src/screens/Home";
