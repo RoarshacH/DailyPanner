@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 
-const SignUP = () => {
+const SignUP = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.top}></View>
@@ -22,7 +22,18 @@ const SignUP = () => {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}> Cancel </Text>
+          <Text
+            style={styles.buttonText}
+            onPress={() => {
+              navigation.reset({
+                index: 0,
+                routes: [{ name: "login" }],
+              });
+            }}
+          >
+            {" "}
+            Cancel{" "}
+          </Text>
         </TouchableOpacity>
       </View>
 

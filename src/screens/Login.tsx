@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.top}>
@@ -19,7 +19,15 @@ const Login = () => {
         <Text style={styles.smallText}> Forgot Password</Text>
       </View>
       <View style={styles.buttonSet}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: "home" }],
+            });
+          }}
+        >
           <Text style={styles.buttonText}> LogIn </Text>
         </TouchableOpacity>
 
@@ -37,7 +45,13 @@ const Login = () => {
       </View>
 
       <View style={styles.footer}>
-        <Text style={styles.smallText}> Not a User Sign up Here!</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push("signUp");
+          }}
+        >
+          <Text style={styles.smallText}>Not a User Sign up Here!</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

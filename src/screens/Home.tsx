@@ -9,7 +9,7 @@ interface IToDo {
   date: string;
 }
 
-const ListViewTest = () => {
+const HomeScreen = ({ navigation }) => {
   const [value, setValue] = useState<string>("");
   const [toDoList, setToDos] = useState<IToDo[]>([]);
   const [error, showError] = useState<Boolean>(false);
@@ -63,11 +63,24 @@ const ListViewTest = () => {
           <Text> Calander View </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push("listScreen");
+          }}
+          style={styles.button}
+        >
           <Text> List All Tasks </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: "login" }],
+            });
+          }}
+        >
           <Text> Logout </Text>
         </TouchableOpacity>
 
@@ -178,4 +191,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListViewTest;
+export default HomeScreen;
