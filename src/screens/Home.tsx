@@ -75,6 +75,15 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
+            navigation.push("addTask");
+          }}
+        >
+          <Text> Add Task! </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
             navigation.reset({
               index: 0,
               routes: [{ name: "login" }],

@@ -11,6 +11,7 @@ import SpaceGameLayout from "./src/screens/SpaceGameLayout";
 //Navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AddTaskTest from "./src/screens/AddTask";
 
 const MainStack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
         <MainStack.Screen name="login" component={LoginScreen} />
         <MainStack.Screen name="signUp" component={SignUpScreen} />
         <MainStack.Screen name="home" component={HomeScreen} />
+        <MainStack.Screen name="addTask" component={AddTaskTest} />
         <MainStack.Screen name="listScreen" component={ScrollViewScreen} />
       </MainStack.Navigator>
     </NavigationContainer>
