@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Image, Alert } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, TextInput, View, Text, ScrollView, Image, Keyboard, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 
-const Login = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState<String>("");
   const [password, setPassword] = useState<String>("");
   const [error, setError] = useState<Boolean>(false);
-  const [errorMsg, setErrorMsg] = useState<String>("Hello");
+  const [errorMsg, setErrorMsg] = useState<String>("");
 
   const handleLogin = () => {
     if (username === "") {
@@ -23,36 +23,38 @@ const Login = ({ navigation }) => {
 
     navigation.reset({
       index: 0,
-      routes: [{ name: "home", params: { itemId: 56, otherParam: "anything you want here" } }],
+      routes: [{ name: "home", params: { username, password } }],
     });
   };
   return (
-    <View style={styles.wrapper}>
-      <View style={styles.top}>
-        <View style={styles.logo}>
-          <Image style={styles.logoImage} source={require("./../../assets/images/logoExample.png")}></Image>
-        </View>
-        <View style={styles.headerTextView}>
-          <Text style={styles.headerTextStyle}>Welcome</Text>
-        </View>
-      </View>
+    <View style={styles.mainBody}>
+      <View>
+        <KeyboardAvoidingView enabled>
+          <View style={{ alignItems: "center" }}>
+            <Image source={require("./../../assets/images/logoExample.png")} style={styles.imageStyle} />
+          </View>
+          <Text style={styles.errorTextStyle}>{errorMsg}</Text>
+          <View style={styles.SectionStyle}>
+            <TextInput style={styles.inputStyle} placeholder={"Username"} onChangeText={setUsername} />
+          </View>
+          <View style={styles.SectionStyle}>
+            <TextInput style={styles.inputStyle} onChangeText={setPassword} placeholder="Password" />
+          </View>
 
-      <View style={styles.body}>
-        <Text>{errorMsg}</Text>
-        <TextInput style={styles.input} placeholder={"Username"} onChangeText={setUsername} />
-        <TextInput style={styles.input} onChangeText={setPassword} placeholder="Password" />
-        <Text style={styles.smallText}> Forgot Password</Text>
-      </View>
-      <View style={styles.buttonSet}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            handleLogin();
-          }}
-        >
-          <Text style={styles.buttonText}> LogIn </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            activeOpacity={0.5}
+            onPress={() => {
+              handleLogin();
+            }}
+          >
+            <Text style={styles.buttonTextStyle}>Login</Text>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
 
+        <Text style={styles.registerTextStyle} onPress={() => navigation.navigate("signUp")}>
+          New Here ? Register
+        </Text>
         <View style={styles.signUpRow}>
           <TouchableOpacity style={styles.signUpImages}>
             <Image style={styles.signUpImages} source={require("./../../assets/images/facebook.png")}></Image>
@@ -65,109 +67,82 @@ const Login = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-
-      <View style={styles.footer}>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.push("signUp");
-          }}
-        >
-          <Text style={styles.smallText}>Not a User Sign up Here!</Text>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };
+export default LoginScreen;
 
 const styles = StyleSheet.create({
-  wrapper: {
+  mainBody: {
     flex: 1,
-    flexDirection: "column",
-  },
-  top: {
-    flex: 2,
-    justifyContent: "flex-end",
-  },
-  body: {
-    flex: 1.5,
     justifyContent: "center",
-    alignItems: "center",
-    paddingTop: "15%",
+    alignContent: "center",
   },
-  footer: {
-    flex: 0.5,
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
-  buttonSet: {
-    flex: 1.5,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: "10%",
-  },
-  logo: {
-    marginTop: 25,
-    height: 150,
-    width: 150,
-    alignSelf: "center",
-    position: "relative",
-    bottom: 50,
-    borderRadius: 50,
-  },
-  logoImage: {
-    height: 150,
-    width: 150,
-    alignSelf: "center",
-    position: "relative",
-    borderRadius: 50,
-  },
-  headerTextView: {
-    marginTop: 5,
-    flex: 0.5,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  headerTextStyle: {
-    fontSize: 26,
-    color: "gray",
-    fontWeight: "400",
-  },
-  input: {
+  SectionStyle: {
+    flexDirection: "row",
     height: 50,
-    margin: 12,
-    borderColor: "gray",
+    marginTop: 20,
+    marginLeft: 35,
+    marginRight: 35,
+    margin: 10,
+  },
+  imageStyle: {
+    width: "50%",
+    height: 100,
+    resizeMode: "contain",
+    margin: 30,
+  },
+  buttonStyle: {
+    backgroundColor: "#0A2126",
+    height: 50,
     borderRadius: 10,
-    borderWidth: 1,
-    padding: 10,
+    borderWidth: 0,
+    color: "#FFFFFF",
+    borderColor: "#7DE24E",
+    alignItems: "center",
+    marginLeft: 35,
+    marginRight: 35,
+    marginTop: 20,
+    marginBottom: 25,
+  },
+  buttonTextStyle: {
+    color: "#FFFFFF",
+    paddingVertical: 10,
+    fontSize: 16,
+  },
+  inputStyle: {
+    height: 50,
+    borderColor: "#0A2126",
+    borderRadius: 10,
     width: "80%",
     fontStyle: "italic",
     fontSize: 16,
-    paddingLeft: 20,
+    flex: 1,
+    color: "white",
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderWidth: 1,
   },
-  button: {
-    backgroundColor: "#eee",
-    height: 50,
-    width: 150,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  smallText: {
-    position: "relative",
-    bottom: -10,
-    color: "blue",
+  registerTextStyle: {
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 14,
+    alignSelf: "center",
+    padding: 10,
+    color: "#0A2126",
     textDecorationLine: "underline",
   },
-  buttonText: {
-    fontSize: 20,
-    fontWeight: "500",
+  errorTextStyle: {
+    color: "#880808",
+    textAlign: "center",
+    fontSize: 14,
   },
   signUpRow: {
     flex: 0.2,
     flexDirection: "row",
     position: "relative",
     paddingTop: 50,
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
   },
   signUpImages: {
@@ -177,5 +152,3 @@ const styles = StyleSheet.create({
     height: 50,
   },
 });
-
-export default Login;
