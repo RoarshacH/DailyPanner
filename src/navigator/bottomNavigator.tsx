@@ -22,6 +22,7 @@ export const BottomNavigator = ({ route }) => {
       initialRouteName={"home"}
       screenOptions={{
         tabBarStyle: { backgroundColor: "#0A2126", paddingBottom: 2, paddingTop: 2 },
+        tabBarActiveTintColor: "white",
       }}
     >
       <Tab.Screen name="home" component={HomeScreen} options={{ title: "Home Screen", tabBarIcon: ({ color }) => <FontAwesome name="home" size={24} color={"white"} /> }} initialParams={{ username: username }} />

@@ -1,118 +1,148 @@
-import React from "react";
-import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, TextInput, View, Text, ScrollView, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 
-const SignUP = ({ navigation }) => {
+const SignUpScreen = ({ navigation }) => {
+  const [username, setUsername] = useState<String>("");
+  const [password, setPassword] = useState<String>("");
+  const [email, setEmail] = useState<String>("");
+  const [confirmEmail, setconfirmEmail] = useState<String>("");
+  const [error, setError] = useState<Boolean>(false);
+  const [errorMsg, setErrorMsg] = useState<String>("");
+
+  const resetError = () => {
+    setError(false);
+    setErrorMsg("");
+  };
+
+  const handleSubmit = () => {
+    if (username === "") {
+      setErrorMsg("Username is Empty");
+      setError(true);
+      return;
+    }
+    if (password === "") {
+      setErrorMsg("Password is Empty");
+      setError(true);
+      return;
+    }
+    if (email != confirmEmail) {
+      setErrorMsg("Email and Confirm Email Does not match");
+      setError(true);
+      return;
+    }
+    setErrorMsg("");
+    setError(false);
+
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "login" }],
+    });
+  };
   return (
-    <View style={styles.wrapper}>
-      <View style={styles.body}>
-        <View style={styles.topTitle}>
-          <Text style={styles.headerTextStyle}>Sign Up Here</Text>
-        </View>
-        <TextInput style={styles.input} value={"Username"} />
-        <TextInput style={styles.input} value={"Email"} />
-        <TextInput style={styles.input} value={"Password"} placeholder="Password" />
-        <TextInput style={styles.input} value={"Confirm Password"} placeholder="Confirm Password" />
-        <Text style={styles.smallText}>By signing up You agree to the our Terms of service and privacy policy</Text>
-      </View>
-      <View style={styles.buttonSet}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}> Submit </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button}>
-          <Text
-            style={styles.buttonText}
+    <View style={styles.mainBody}>
+      <View style={{ flex: 0.2 }}></View>
+      <ScrollView>
+        <KeyboardAvoidingView enabled>
+          <View style={{ alignItems: "center" }}>
+            <Text style={styles.headerTextStyle}>Sign Up</Text>
+          </View>
+          <Text style={styles.errorTextStyle}>{errorMsg}</Text>
+          <View style={styles.SectionStyle}>
+            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} placeholder={"Username"} onChangeText={setUsername} clearTextOnFocus />
+          </View>
+          <View style={styles.SectionStyle}>
+            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} onChangeText={setEmail} placeholder="Email" clearTextOnFocus />
+          </View>
+          <View style={styles.SectionStyle}>
+            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} onChangeText={setconfirmEmail} placeholder="Confirm Email" clearTextOnFocus />
+          </View>
+          <View style={styles.SectionStyle}>
+            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} onChangeText={setPassword} placeholder="Password" clearTextOnFocus />
+          </View>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            activeOpacity={0.5}
             onPress={() => {
-              navigation.reset({
-                index: 0,
-                routes: [{ name: "login" }],
-              });
+              handleSubmit();
             }}
           >
-            {" "}
-            Cancel{" "}
-          </Text>
-        </TouchableOpacity>
-      </View>
+            <Text style={styles.buttonTextStyle}>Sign Up</Text>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
 
-      <View style={styles.footer}></View>
+        <Text style={styles.registerTextStyle} onPress={() => navigation.navigate("login")}>
+          Already a User? Login
+        </Text>
+      </ScrollView>
     </View>
   );
 };
+export default SignUpScreen;
 
 const styles = StyleSheet.create({
-  wrapper: {
+  mainBody: {
     flex: 1,
-    flexDirection: "column",
-  },
-  top: {
-    flex: 0.5,
-    justifyContent: "flex-end",
-  },
-  body: {
-    flex: 6,
     justifyContent: "center",
-    alignItems: "center",
-    paddingTop: "15%",
+    alignContent: "center",
+    marginTop: 20,
   },
-  footer: {
-    flex: 0.8,
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
-  buttonSet: {
-    flex: 0.2,
+  SectionStyle: {
     flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "flex-end",
-    paddingTop: "10%",
-  },
-  topTitle: {
-    marginTop: 5,
-    flex: 0.2,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    position: "relative",
-    bottom: 40,
+    height: 50,
+    marginTop: 20,
+    marginLeft: 35,
+    marginRight: 35,
+    margin: 10,
   },
   headerTextStyle: {
-    fontSize: 34,
-    color: "gray",
-    fontWeight: "600",
+    height: 100,
+    margin: 30,
+    textAlign: "center",
+    fontSize: 32,
   },
-  input: {
+  buttonStyle: {
+    backgroundColor: "#0A2126",
     height: 50,
-    margin: 12,
-    borderColor: "gray",
     borderRadius: 10,
-    borderWidth: 1,
-    padding: 10,
+    borderWidth: 0,
+    color: "#FFFFFF",
+    borderColor: "#7DE24E",
+    alignItems: "center",
+    marginLeft: 35,
+    marginRight: 35,
+    marginTop: 20,
+    marginBottom: 25,
+  },
+  buttonTextStyle: {
+    color: "#FFFFFF",
+    paddingVertical: 10,
+    fontSize: 16,
+  },
+  inputStyle: {
+    height: 50,
+    borderColor: "#0A2126",
+    borderRadius: 10,
     width: "80%",
     fontStyle: "italic",
-    paddingLeft: 20,
+    fontSize: 16,
+    flex: 1,
+    color: "#0A2126",
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderWidth: 1,
   },
-  button: {
-    backgroundColor: "gray",
-    height: 50,
-    width: 120,
-    margin: 10,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  smallText: {
-    alignSelf: "center",
+  registerTextStyle: {
     textAlign: "center",
-    width: 300,
-    position: "relative",
-    bottom: -20,
-    color: "blue",
+    fontWeight: "bold",
+    fontSize: 14,
+    alignSelf: "center",
+    padding: 10,
+    color: "#0A2126",
     textDecorationLine: "underline",
   },
-  buttonText: {
-    fontSize: 20,
-    fontWeight: "500",
+  errorTextStyle: {
+    color: "#880808",
+    textAlign: "center",
+    fontSize: 14,
   },
 });
-
-export default SignUP;
