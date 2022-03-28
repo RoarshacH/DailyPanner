@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Button, TouchableOpacity, Image, TextInput, ScrollView } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
 
 import Header from "../components/Header";
 import ListItem from "../components/ListItem";
