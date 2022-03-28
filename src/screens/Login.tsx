@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
             <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} placeholder={"Username"} onChangeText={setUsername} clearTextOnFocus />
           </View>
           <View style={styles.SectionStyle}>
-            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} onChangeText={setPassword} placeholder="Password" clearTextOnFocus />
+            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} onChangeText={setPassword} placeholder="Password" clearTextOnFocus inlineImageLeft="favicon" secureTextEntry={true} />
           </View>
 
           <TouchableOpacity
