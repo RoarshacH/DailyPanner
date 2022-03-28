@@ -5,6 +5,7 @@ import HomeScreen from "./src/screens/Home";
 import ScrollViewScreen from "./src/screens/Scrolling";
 // import DashboardView from "./src/screens/Dashboard";
 // import ManageAccount from "./src/screens/Manageaccountscreen";
+import { BottomNavigator } from "./src/navigator/bottomNavigator";
 
 //Navigation
 import { NavigationContainer } from "@react-navigation/native";
@@ -20,6 +21,7 @@ export default function App() {
         <MainStack.Screen name="signUp" component={SignUpScreen} />
         <MainStack.Screen name="home" component={HomeScreen} />
         <MainStack.Screen name="listScreen" component={ScrollViewScreen} />
+        <MainStack.Screen name="bottomNav" component={BottomNavigator} />
       </MainStack.Navigator>
     </NavigationContainer>
 

@@ -1,50 +1,28 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, Button, TouchableOpacity, Image, TextInput } from "react-native";
+import { Text, View, StyleSheet, Button, TouchableOpacity, Image, TextInput, ScrollView } from "react-native";
+
 import Header from "../components/Header";
 import ListItem from "../components/ListItem";
 
 const HomeScreen = ({ navigation, route }) => {
-  const [error, showError] = useState<Boolean>(false);
-
-  const { username } = route.params;
+  const username = route.params.username;
+  const [listItems, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
 
   return (
     <View style={styles.wrapper}>
       <Header headerTitle={username}></Header>
-      <View style={styles.bodyTop}>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
-      </View>
+
+      <ScrollView style={{ flex: 2 }}>
+        <View style={styles.bodyTop}>
+          {listItems.map((item) => {
+            return <ListItem key={item} />;
+          })}
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+        </View>
+      </ScrollView>
+
       <View style={styles.bodyBottom}>
-        <TouchableOpacity style={styles.button}>
-          <Text> Tasks For Today </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button}>
-          <Text> Calander View </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={() => {
-            navigation.push("listScreen");
-          }}
-          style={styles.button}
-        >
-          <Text> List All Tasks </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            navigation.reset({
-              index: 0,
-              routes: [{ name: "login" }],
-            });
-          }}
-        >
-          <Text> Logout </Text>
-        </TouchableOpacity>
-
         <TouchableOpacity style={styles.roundButton}>
           <Image style={styles.imagebutton} source={require("./../../assets/images/fabImage.png")}></Image>
         </TouchableOpacity>
@@ -75,7 +53,7 @@ const styles = StyleSheet.create({
     paddingTop: "15%",
   },
   bodyBottom: {
-    flex: 3,
+    flex: 0.1,
     justifyContent: "center",
     alignItems: "center",
     paddingTop: "15%",

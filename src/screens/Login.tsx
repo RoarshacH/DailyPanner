@@ -7,6 +7,10 @@ const LoginScreen = ({ navigation }) => {
   const [error, setError] = useState<Boolean>(false);
   const [errorMsg, setErrorMsg] = useState<String>("");
 
+  const resetError = () => {
+    setError(false);
+    setErrorMsg("");
+  };
   const handleLogin = () => {
     if (username === "") {
       setErrorMsg("Username is Empty");
@@ -23,7 +27,7 @@ const LoginScreen = ({ navigation }) => {
 
     navigation.reset({
       index: 0,
-      routes: [{ name: "home", params: { username, password } }],
+      routes: [{ name: "bottomNav", params: { username, password } }],
     });
   };
   return (
@@ -35,10 +39,10 @@ const LoginScreen = ({ navigation }) => {
           </View>
           <Text style={styles.errorTextStyle}>{errorMsg}</Text>
           <View style={styles.SectionStyle}>
-            <TextInput style={styles.inputStyle} placeholder={"Username"} onChangeText={setUsername} />
+            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} placeholder={"Username"} onChangeText={setUsername} clearTextOnFocus />
           </View>
           <View style={styles.SectionStyle}>
-            <TextInput style={styles.inputStyle} onChangeText={setPassword} placeholder="Password" />
+            <TextInput style={styles.inputStyle} textAlign={"center"} onChange={resetError} onChangeText={setPassword} placeholder="Password" clearTextOnFocus />
           </View>
 
           <TouchableOpacity
@@ -118,7 +122,7 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     fontSize: 16,
     flex: 1,
-    color: "white",
+    color: "#0A2126",
     paddingLeft: 15,
     paddingRight: 15,
     borderWidth: 1,
