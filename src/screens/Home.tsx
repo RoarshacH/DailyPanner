@@ -17,8 +17,6 @@ const HomeScreen = ({ navigation, route }) => {
           {listItems.map((item) => {
             return <ListItem key={item} />;
           })}
-          <ListItem></ListItem>
-          <ListItem></ListItem>
         </View>
       </ScrollView>
 
