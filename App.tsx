@@ -3,10 +3,8 @@ import LoginScreen from "./src/screens/Login";
 import SignUpScreen from "./src/screens/SignUP";
 import HomeScreen from "./src/screens/Home";
 import ScrollViewScreen from "./src/screens/Scrolling";
-import DashboardView from "./src/screens/Dashboard";
-import ManageAccount from "./src/screens/Manageaccountscreen";
-import Boxes from "./src/screens/Boxes";
-import SpaceGameLayout from "./src/screens/SpaceGameLayout";
+// import DashboardView from "./src/screens/Dashboard";
+// import ManageAccount from "./src/screens/Manageaccountscreen";
 
 //Navigation
 import { NavigationContainer } from "@react-navigation/native";

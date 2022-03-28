@@ -9,10 +9,12 @@ interface IToDo {
   date: string;
 }
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, route }) => {
   const [value, setValue] = useState<string>("");
   const [toDoList, setToDos] = useState<IToDo[]>([]);
   const [error, showError] = useState<Boolean>(false);
+
+  const { itemId, otherParam } = route.params;
 
   const handleSubmit = (): void => {
     if (value.trim()) setToDos([...toDoList, { text: value, completed: false, date: new Date().toLocaleString() }]);
@@ -53,6 +55,8 @@ const HomeScreen = ({ navigation }) => {
         ))} */}
         <ListItem></ListItem>
         <ListItem></ListItem>
+        <Text>itemId: {JSON.stringify(itemId)}</Text>
+        <Text>otherParam: {JSON.stringify(otherParam)}</Text>
       </View>
       <View style={styles.bodyBottom}>
         <TouchableOpacity style={styles.button}>

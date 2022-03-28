@@ -1,7 +1,31 @@
-import React from "react";
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Image, Alert } from "react-native";
 
 const Login = ({ navigation }) => {
+  const [username, setUsername] = useState<String>("");
+  const [password, setPassword] = useState<String>("");
+  const [error, setError] = useState<Boolean>(false);
+  const [errorMsg, setErrorMsg] = useState<String>("Hello");
+
+  const handleLogin = () => {
+    if (username === "") {
+      setErrorMsg("Username is Empty");
+      setError(true);
+      return;
+    }
+    if (password === "") {
+      setErrorMsg("Password is Empty");
+      setError(true);
+      return;
+    }
+    setErrorMsg("");
+    setError(false);
+
+    navigation.reset({
+      index: 0,
+      routes: [{ name: "home", params: { itemId: 56, otherParam: "anything you want here" } }],
+    });
+  };
   return (
     <View style={styles.wrapper}>
       <View style={styles.top}>
@@ -14,18 +38,16 @@ const Login = ({ navigation }) => {
       </View>
 
       <View style={styles.body}>
-        <TextInput style={styles.input} value={"Username"} />
-        <TextInput style={styles.input} value={"Password"} placeholder="Password" />
+        <Text>{errorMsg}</Text>
+        <TextInput style={styles.input} placeholder={"Username"} onChangeText={setUsername} />
+        <TextInput style={styles.input} onChangeText={setPassword} placeholder="Password" />
         <Text style={styles.smallText}> Forgot Password</Text>
       </View>
       <View style={styles.buttonSet}>
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            navigation.reset({
-              index: 0,
-              routes: [{ name: "home" }],
-            });
+            handleLogin();
           }}
         >
           <Text style={styles.buttonText}> LogIn </Text>
