@@ -22,9 +22,7 @@ const ListItem = (prop) => {
 
   return (
     <View style={styles.wrapper}>
-      <Text>
-        {title} {completed ? "Done" : ""}{" "}
-      </Text>
+      {completed ? <Text style={{ textDecorationLine: "line-through" }}>{title}</Text> : <Text>{title} </Text>}
       <Text>{date}</Text>
       <TouchableOpacity onPress={completeTask}>
         <Text style={styles.doneButtonStyle}>Done?</Text>
