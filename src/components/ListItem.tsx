@@ -22,8 +22,8 @@ const ListItem = (prop) => {
 
   return (
     <View style={styles.wrapper}>
-      {completed ? <Text style={{ textDecorationLine: "line-through" }}>{title}</Text> : <Text>{title} </Text>}
-      <Text>{date}</Text>
+      {completed ? <Text style={styles.doneTextStyle}>{title}</Text> : <Text style={styles.notDoneTextStyle}>{title} </Text>}
+      {completed ? <Text style={styles.doneTextStyle}>{date}</Text> : <Text style={styles.notDoneTextStyle}>{date} </Text>}
       <TouchableOpacity onPress={completeTask}>
         <Text style={styles.doneButtonStyle}>Done?</Text>
       </TouchableOpacity>
@@ -42,6 +42,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   doneButtonStyle: { color: "#4A57A3", textDecorationStyle: "solid", textDecorationLine: "underline" },
+  doneTextStyle: { textDecorationLine: "line-through", color: "#4A57A3" },
+  notDoneTextStyle: { color: "black" },
 });
 
 export default ListItem;
