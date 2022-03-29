@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Alert } from "react-native";
 
-const ListItem = () => {
+const ListItem = (prop) => {
+  const { title, date, completed, index, toggleComplete } = prop;
+
   const completeTask = () => {
     Alert.alert("Attention \n", "Complete The Task?", [
       {
         text: "Yes",
-        onPress: () => {},
+        onPress: () => {
+          toggleComplete(index);
+        },
       },
       {
         text: "No",
@@ -18,8 +22,10 @@ const ListItem = () => {
 
   return (
     <View style={styles.wrapper}>
-      <Text>Upcoming Deadline</Text>
-      <Text>Time: HH:MM - DD:MM</Text>
+      <Text>
+        {title} {completed ? "Done" : ""}{" "}
+      </Text>
+      <Text>{date}</Text>
       <TouchableOpacity onPress={completeTask}>
         <Text style={styles.doneButtonStyle}>Done?</Text>
       </TouchableOpacity>

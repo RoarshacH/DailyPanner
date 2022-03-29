@@ -4,9 +4,32 @@ import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView } from "rea
 import Header from "../components/Header";
 import ListItem from "../components/ListItem";
 
+interface IToDo {
+  text: string;
+  completed: boolean;
+  date: string;
+}
+
 const HomeScreen = ({ navigation, route }) => {
   const username = route.params.username;
+  const [toDoList, setToDos] = useState<IToDo[]>([
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+    { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
+  ]);
   const [listItems, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
+
+  const toggleComplete = (index: number): void => {
+    const newToDoList = [...toDoList];
+    newToDoList[index].completed = !newToDoList[index].completed;
+    setToDos(newToDoList);
+  };
 
   return (
     <View style={styles.wrapper}>
@@ -14,8 +37,8 @@ const HomeScreen = ({ navigation, route }) => {
 
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.bodyTop}>
-          {listItems.map((item) => {
-            return <ListItem key={item} />;
+          {toDoList.map((toDo: IToDo, index: number) => {
+            return <ListItem key={index} index={index} title={toDo.text} date={toDo.date} completed={toDo.completed} toggleComplete={toggleComplete} />;
           })}
         </View>
       </ScrollView>
