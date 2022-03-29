@@ -22,11 +22,19 @@ export const BottomNavigator = ({ route }) => {
     <Tab.Navigator
       initialRouteName={"home"}
       screenOptions={{
+        // headerShown: false,
+        headerTitleAlign: "center",
+        headerStyle: {
+          backgroundColor: "#4A57A3",
+        },
+        headerTitleStyle: {
+          color: "white",
+        },
         tabBarStyle: { backgroundColor: "#4A57A3", paddingBottom: 2, paddingTop: 2 },
         tabBarActiveTintColor: "white",
       }}
     >
-      <Tab.Screen name="home" component={HomeScreen} options={{ title: "Home Screen", tabBarIcon: ({ color }) => <FontAwesome name="home" size={24} color={"white"} /> }} initialParams={{ username: username }} />
+      <Tab.Screen name="home" component={HomeScreen} options={{ headerShown: false, title: "Home Screen", tabBarIcon: ({ color }) => <FontAwesome name="home" size={24} color={"white"} /> }} initialParams={{ username: username }} />
       <Tab.Screen name="calendar" component={ManageAccount} options={{ title: "Calendar View", tabBarIcon: () => <FontAwesome name="calendar" size={24} color="white" /> }} />
       <Tab.Screen name="listView" component={ScrollViewScreen} options={{ title: "List All Tasks", tabBarIcon: ({ color }) => <FontAwesome5 name="list" size={24} color="white" /> }} />
       <Tab.Screen name="logout" component={LogoutScreen} options={{ title: "Profile", tabBarIcon: () => <Entypo name="log-out" size={24} color="white" /> }} />

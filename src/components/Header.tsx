@@ -24,12 +24,11 @@ const Header = (prop) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 0.5,
+    flex: 0.4,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#4A57A3",
-    // paddingTop: 80,
-    // paddingBottom: 40,
+    paddingTop: 40,
   },
   headerText: {
     fontSize: 24,

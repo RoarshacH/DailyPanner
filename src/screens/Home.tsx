@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation, route }) => {
     <View style={styles.wrapper}>
       <Header headerTitle={username}></Header>
 
-      <ScrollView style={{ flex: 2 }}>
+      <ScrollView style={{ flex: 1 }}>
         <View style={styles.bodyTop}>
           {listItems.map((item) => {
             return <ListItem key={item} />;
@@ -35,32 +35,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "column",
   },
-  button: {
-    backgroundColor: "gray",
-    height: 50,
-    width: 250,
-    margin: 10,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   bodyTop: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: "15%",
+    paddingTop: "5%",
   },
   bodyBottom: {
-    flex: 0.1,
+    height: 80,
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: "15%",
-  },
-  imageStyle: {
-    width: "100%",
-    height: 300,
-    position: "relative",
-    top: 0,
   },
   imagebutton: {
     borderRadius: 50,
@@ -72,7 +56,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     position: "relative",
-    bottom: 10,
+    bottom: 0,
     right: -150,
     backgroundColor: "#4A57A3",
   },
