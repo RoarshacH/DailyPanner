@@ -3,12 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView } from "rea
 
 import Header from "../components/Header";
 import ListItem from "../components/ListItem";
-
-interface IToDo {
-  text: string;
-  completed: boolean;
-  date: string;
-}
+import { IToDo } from "../resources/ITToDo";
 
 const HomeScreen = ({ navigation, route }) => {
   const username = route.params.username;
@@ -23,7 +18,6 @@ const HomeScreen = ({ navigation, route }) => {
     { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
     { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
   ]);
-  const [listItems, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
 
   const toggleComplete = (index: number): void => {
     const newToDoList = [...toDoList];
