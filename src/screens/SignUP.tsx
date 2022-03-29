@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   buttonStyle: {
-    backgroundColor: "#0A2126",
+    backgroundColor: "#4A57A3",
     height: 50,
     borderRadius: 10,
     borderWidth: 0,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     height: 50,
-    borderColor: "#0A2126",
+    borderColor: "#4A57A3",
     borderRadius: 10,
     width: "80%",
     fontStyle: "italic",

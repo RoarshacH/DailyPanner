@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation, route }) => {
 
       <View style={styles.bodyBottom}>
         <TouchableOpacity style={styles.roundButton}>
-          <Image style={styles.imagebutton} source={require("./../../assets/images/fabImage.png")}></Image>
+          <Image style={styles.imagebutton} source={require("./../../assets/images/fabImageAlt.png")}></Image>
         </TouchableOpacity>
       </View>
     </View>
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     position: "relative",
     bottom: 10,
     right: -150,
+    backgroundColor: "#4A57A3",
   },
 });
 

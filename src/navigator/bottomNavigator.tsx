@@ -22,7 +22,7 @@ export const BottomNavigator = ({ route }) => {
     <Tab.Navigator
       initialRouteName={"home"}
       screenOptions={{
-        tabBarStyle: { backgroundColor: "#0A2126", paddingBottom: 2, paddingTop: 2 },
+        tabBarStyle: { backgroundColor: "#4A57A3", paddingBottom: 2, paddingTop: 2 },
         tabBarActiveTintColor: "white",
       }}
     >

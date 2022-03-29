@@ -35,7 +35,7 @@ const LoginScreen = ({ navigation }) => {
       <View>
         <KeyboardAvoidingView enabled>
           <View style={{ alignItems: "center" }}>
-            <Image source={require("./../../assets/images/logoExample.png")} style={styles.imageStyle} />
+            <Image source={require("./../../assets/images/Logo_noBG.png")} style={styles.imageStyle} />
           </View>
           <Text style={styles.errorTextStyle}>{errorMsg}</Text>
           <View style={styles.SectionStyle}>
@@ -91,13 +91,13 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   imageStyle: {
-    width: "50%",
-    height: 100,
-    resizeMode: "contain",
+    width: 160,
+    height: 150,
+    resizeMode: "stretch",
     margin: 30,
   },
   buttonStyle: {
-    backgroundColor: "#0A2126",
+    backgroundColor: "#4A57A3",
     height: 50,
     borderRadius: 10,
     borderWidth: 0,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     height: 50,
-    borderColor: "#0A2126",
+    borderColor: "#4A57A3",
     borderRadius: 10,
     width: "80%",
     fontStyle: "italic",
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     alignSelf: "center",
     padding: 10,
-    color: "#0A2126",
+    color: "#4A57A3",
     textDecorationLine: "underline",
   },
   errorTextStyle: {
