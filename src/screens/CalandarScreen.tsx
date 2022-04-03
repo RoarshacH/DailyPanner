@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { View, StyleSheet, SafeAreaView } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
-
-import Header from "../components/Header";
 
 const ManageAccount = () => {
   return (
