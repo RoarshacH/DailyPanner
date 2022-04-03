@@ -32,17 +32,15 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "center",
   },
   content: {
     alignItems: "center",
-    flex: 1,
-    marginTop: 50,
-    marginBottom: 40,
+    justifyContent: "center",
   },
   calandar: {
     flex: 1,
     width: 400,
+    justifyContent: "center",
   },
 });
 
