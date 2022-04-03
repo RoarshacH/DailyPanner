@@ -38,7 +38,6 @@ const ScrollViewScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header></Header>
       <ScrollView>
         <View style={[styles.content]}>
           {toDoList.map((toDo: IToDo, index: number) => {
