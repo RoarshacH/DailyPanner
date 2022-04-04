@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import ListItem from "../components/ListItem";
 import { IToDo } from "../resources/ITToDo";
 
-const HomeScreen = ({ navigation, route }) => {
+const HomeScreen = ({ navigation, route, props }) => {
   const username = route.params.username;
   const [toDoList, setToDos] = useState<IToDo[]>([
     { text: "Upcoming Deadline", completed: false, date: "Time: HH:MM - DD:MM" },
@@ -38,7 +38,12 @@ const HomeScreen = ({ navigation, route }) => {
       </ScrollView>
 
       <View style={styles.bodyBottom}>
-        <TouchableOpacity style={styles.roundButton}>
+        <TouchableOpacity
+          style={styles.roundButton}
+          onPress={() => {
+            navigation.push("addTask");
+          }}
+        >
           <Image style={styles.imagebutton} source={require("./../../assets/images/fabImageAlt.png")}></Image>
         </TouchableOpacity>
       </View>

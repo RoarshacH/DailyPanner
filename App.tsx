@@ -2,6 +2,7 @@ import { StyleSheet, View } from "react-native";
 import LoginScreen from "./src/screens/Login";
 import SignUpScreen from "./src/screens/SignUP";
 import { BottomNavigator } from "./src/navigator/bottomNavigator";
+import AddTaskScreen from "./src/screens/AddTask";
 
 //Navigation
 import { NavigationContainer } from "@react-navigation/native";
@@ -16,6 +17,7 @@ export default function App() {
         <MainStack.Screen name="login" component={LoginScreen} />
         <MainStack.Screen name="signUp" component={SignUpScreen} />
         <MainStack.Screen name="bottomNav" component={BottomNavigator} />
+        <MainStack.Screen name="addTask" component={AddTaskScreen} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

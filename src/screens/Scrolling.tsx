@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
-import Header from "../components/Header";
 import ListItem from "../components/ListItem";
 
 import { IToDo } from "../resources/ITToDo";

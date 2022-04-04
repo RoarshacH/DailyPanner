@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 
-const ManageAccount = () => {
+const CalendarScreen = () => {
   return (
     <View style={styles.wrapper}>
       <View style={[styles.content]}>
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ManageAccount;
+export default CalendarScreen;
