@@ -8,40 +8,32 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+
 
 const ManageAccount = () => {
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={styles.top}>
-        <View style={styles.logo}>
-          <Image
-            style={styles.logoImage}
-            source={require("./../../assets/images/logoExample.png")}
-          ></Image>
-        </View>
-        <View style={styles.headerTextView}>
-          <Text style={styles.headerTextStyle}>Account Profile Settings</Text>
-        </View>
-      </View>
+    <SafeAreaView>
+<Calendar
+  markingType="multi-period"
+  markedDates={{
+    '2017-12-14': {
+      periods: [
+        {startingDay: false, endingDay: true, color: '#5f9ea0'},
+        {startingDay: false, endingDay: true, color: '#ffa500'},
+        {startingDay: true, endingDay: false, color: '#f0e68c'}
+      ]
+    },
+    '2017-12-15': {
+      periods: [
+        {startingDay: true, endingDay: false, color: '#ffa500'},
+        {color: 'transparent'},
+        {startingDay: false, endingDay: false, color: '#f0e68c'}
+      ]
+    }
+  }}
+/>
 
-      <View style={styles.body}>
-        <TextInput style={styles.input} value={"Edit Username"} />
-        <TextInput
-          style={styles.input}
-          value={"Add New Password"}
-          placeholder="Add New Password"
-        />
-        <TextInput
-          style={styles.input}
-          value={"Confirm New Password"}
-          placeholder="Confirm New Password"
-        />
-      </View>
-      <View style={styles.buttonSet}>
-        <TouchableOpacity style={styles.button}>
-          <Text> Confirm Changes</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };
