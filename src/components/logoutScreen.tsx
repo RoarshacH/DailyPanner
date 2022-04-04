@@ -1,5 +1,5 @@
-import React, { Component, useEffect } from "react";
-import { View, Text, StyleSheet, Button, Alert } from "react-native";
+import React, { useEffect } from "react";
+import { View, StyleSheet, Button, Alert } from "react-native";
 
 export function LogoutScreen(props) {
   const { navigation, route } = props;

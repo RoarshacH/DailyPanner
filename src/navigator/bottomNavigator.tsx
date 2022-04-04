@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Fonts
 import { FontAwesome } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 
@@ -22,7 +21,6 @@ export const BottomNavigator = ({ route }) => {
     <Tab.Navigator
       initialRouteName={"home"}
       screenOptions={{
-        // headerShown: false,
         headerTitleAlign: "center",
         headerStyle: {
           backgroundColor: "#4A57A3",
@@ -32,7 +30,7 @@ export const BottomNavigator = ({ route }) => {
           color: "white",
           fontSize: 24,
         },
-        tabBarStyle: { backgroundColor: "#4A57A3", paddingBottom: 2, paddingTop: 2 },
+        tabBarStyle: { backgroundColor: "#4A57A3", padding: 2, height: 60 },
         tabBarActiveTintColor: "white",
       }}
     >

@@ -71,7 +71,7 @@ const SignUpScreen = ({ navigation }) => {
         </KeyboardAvoidingView>
 
         <Text style={styles.registerTextStyle} onPress={() => navigation.navigate("login")}>
-          Already a User? Login
+          Already a User? Login Here!
         </Text>
       </ScrollView>
     </View>
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
   headerTextStyle: {
     height: 100,
     margin: 30,
+    color: "#4A57A3",
     textAlign: "center",
     fontSize: 32,
   },
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     alignSelf: "center",
     padding: 10,
-    color: "#0A2126",
+    color: "#4A57A3",
     textDecorationLine: "underline",
   },
   errorTextStyle: {
