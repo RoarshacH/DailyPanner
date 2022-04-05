@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 export default function Onboarding_3({ navigation }) {
   return (
@@ -8,14 +10,19 @@ export default function Onboarding_3({ navigation }) {
       <Text style={{ fontSize: 24, fontWeight: "bold", color: "#4A57A3" }}>Improve Productivity </Text>
       <Text style={styles.smallText}>This is important for your personal and professional life. While many people think of productivity as it relates to their job, you also want to be productive at home.. </Text>
 
-      <View style={{ flexDirection: "row" }}>
+      <View style={styles.bottomArrows}>
         <TouchableOpacity
           style={styles.buttonStyle}
           onPress={() => {
             navigation.goBack();
           }}
         >
-          <Text style={{ fontSize: 16, color: "white" }}>Back </Text>
+          <FontAwesome5 name="arrow-left" size={32} color="#4A57A3" />
+          {/* <Text style={{ fontSize: 16, color: "white" }}>Back </Text> */}
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonStyle}>
+          <Entypo name="dots-three-horizontal" size={32} color="#4A57A3" />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -24,7 +31,7 @@ export default function Onboarding_3({ navigation }) {
             navigation.navigate("login");
           }}
         >
-          <Text style={{ fontSize: 16, color: "white" }}>Next </Text>
+          <FontAwesome5 name="arrow-right" size={32} color="#4A57A3" />
         </TouchableOpacity>
       </View>
     </View>
@@ -54,9 +61,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 5,
-    elevation: 3,
-    backgroundColor: "#4A57A3",
-    marginHorizontal: 30,
+    marginHorizontal: 20,
   },
   smallText: {
     paddingHorizontal: 20,
@@ -65,5 +70,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     color: "#4A57A3",
+  },
+  bottomArrows: {
+    flexDirection: "row",
+    position: "absolute",
+    bottom: 0,
+    marginBottom: 50,
   },
 });

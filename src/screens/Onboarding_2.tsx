@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 
+import { FontAwesome5 } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+
 export default function Onboarding_2({ navigation }) {
   return (
     <View style={styles.wrapper}>
@@ -8,14 +11,19 @@ export default function Onboarding_2({ navigation }) {
       <Text style={{ fontSize: 24, fontWeight: "bold", color: "#4A57A3" }}>Time Management </Text>
       <Text style={styles.smallText}>Do you find that there is never enough time for everything? If so, it is probably because you are not scheduling your time effectively. </Text>
 
-      <View style={{ flexDirection: "row" }}>
+      <View style={styles.bottomArrows}>
         <TouchableOpacity
           style={styles.buttonStyle}
           onPress={() => {
             navigation.goBack();
           }}
         >
-          <Text style={{ fontSize: 16, color: "white" }}>Back </Text>
+          <FontAwesome5 name="arrow-left" size={32} color="#4A57A3" />
+          {/* <Text style={{ fontSize: 16, color: "white" }}>Back </Text> */}
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonStyle}>
+          <Entypo name="dots-three-horizontal" size={32} color="#4A57A3" />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -24,7 +32,7 @@ export default function Onboarding_2({ navigation }) {
             navigation.navigate("onboarding_3");
           }}
         >
-          <Text style={{ fontSize: 16, color: "white" }}>Next </Text>
+          <FontAwesome5 name="arrow-right" size={32} color="#4A57A3" />
         </TouchableOpacity>
       </View>
     </View>
@@ -44,7 +52,6 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
   },
-
   font: {
     color: "blue",
     fontWeight: "bold",
@@ -54,9 +61,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 5,
-    elevation: 3,
-    backgroundColor: "#4A57A3",
-    marginHorizontal: 30,
+    marginHorizontal: 20,
   },
   smallText: {
     paddingHorizontal: 20,
@@ -65,5 +70,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     color: "#4A57A3",
+  },
+  bottomArrows: {
+    flexDirection: "row",
+    position: "absolute",
+    bottom: 0,
+    marginBottom: 50,
   },
 });

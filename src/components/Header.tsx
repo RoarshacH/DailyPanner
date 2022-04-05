@@ -24,7 +24,7 @@ const Header = (prop) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 0.4,
+    flex: 0.3,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#4A57A3",

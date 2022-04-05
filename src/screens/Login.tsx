@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, TextInput, View, Text, Image, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState<String>("");
@@ -61,13 +62,16 @@ const LoginScreen = ({ navigation }) => {
         </Text>
         <View style={styles.signUpRow}>
           <TouchableOpacity style={styles.signUpImages}>
-            <Image style={styles.signUpImages} source={require("./../../assets/images/facebook.png")}></Image>
+            <FontAwesome5 name="facebook" size={38} color="#4A57A3" />
+            {/* <Image style={styles.signUpImages} source={require("./../../assets/images/facebook.png")}></Image> */}
           </TouchableOpacity>
           <TouchableOpacity style={styles.signUpImages}>
-            <Image style={styles.signUpImages} source={require("./../../assets/images/Instagram.png")}></Image>
+            <FontAwesome5 name="instagram" size={38} color="#4A57A3" />
+            {/* <Image style={styles.signUpImages} source={require("./../../assets/images/Instagram.png")}></Image> */}
           </TouchableOpacity>
           <TouchableOpacity style={styles.signUpImages}>
-            <Image style={styles.signUpImages} source={require("./../../assets/images/twitter.png")}></Image>
+            <FontAwesome5 name="twitter" size={38} color="#4A57A3" />
+            {/* <Image style={styles.signUpImages} source={require("./../../assets/images/twitter.png")}></Image> */}
           </TouchableOpacity>
         </View>
       </View>
@@ -151,8 +155,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   signUpImages: {
-    margin: 10,
-    borderRadius: 50,
+    margin: 20,
     width: 50,
     height: 50,
   },
