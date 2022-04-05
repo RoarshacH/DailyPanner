@@ -7,6 +7,14 @@
 - Run `yarn` command to install the dependencies
 - Run `expo start` to start the project
 
+## Navigation
+
+1.  App Loads to the Welcome Page (Use Arrows to Navigate to Login Page) (There are 3 Onboarding Screens)
+2.  Login Page (Go to Sign Up page or login using any text for username and password) (A Mock API Check for empty values for username and password)
+3.  Home Page (Bottom Nav for Calendar Screen, All Tasks List Scree, Logout Page)
+4.  Click on FAB to open Add Task Screen (Click on any button to go back to home screen)
+
+
 ## Project Colaboraters
 
 | GitHub Link  | Student Name |
