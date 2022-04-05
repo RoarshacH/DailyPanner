@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignContent: "center",
+    backgroundColor: "#D0D0E3",
   },
   SectionStyle: {
     flexDirection: "row",

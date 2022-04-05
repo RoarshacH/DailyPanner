@@ -84,7 +84,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignContent: "center",
-    marginTop: 20,
+    paddingTop: 20,
+    backgroundColor: "#D0D0E3",
   },
   SectionStyle: {
     flexDirection: "row",
