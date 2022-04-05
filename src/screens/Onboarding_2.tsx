@@ -19,7 +19,6 @@ export default function Onboarding_2({ navigation }) {
           }}
         >
           <FontAwesome5 name="arrow-left" size={32} color="#4A57A3" />
-          {/* <Text style={{ fontSize: 16, color: "white" }}>Back </Text> */}
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.buttonStyle}>
