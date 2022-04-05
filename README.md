@@ -16,6 +16,8 @@
 5.  You can modify the Task item state by clicking done on the item 
 6.  You can logout by going to logout screen and clicking on the logout button and clicking yes on the alert dialog(Redirect back to login page)
 
+## App In Action
+<img src="https://github.com/RoarshacH/DailyPanner/blob/master/reactAppVid.gif" alt="appNav" width="300"/>
 
 ## Project Colaboraters
 
